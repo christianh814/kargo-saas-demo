@@ -13,6 +13,8 @@ Simple Demo for Kargo SaaS on AKP
 * Login to your Argo CD instance: `argocd login --grpc-web --username=admin christian.cd.akuity.cloud`
 * Login to Kargo SaaS instance: `kargo login --admin https://christian.kargo.akuity.cloud`
 * Load Repo creds for Argo CD: `argocd repo add https://github.com/christianh814/kargo-saas-demo --type git --username not-used --password $KARGO_GH_PAT`
-* Load [PAT creds for Kargo](https://kargo.akuity.io/how-to-guides/managing-credentials#credentials-as-kubernetes-secret-resources): `kargo create -f ~/workspace/kargo/kargo-saas-demo.yaml` # the `namespace` is the Kargo `Project` name
 * Create AppSet: `argocd appset create  argocd/appset.yaml`
 * Create Kargo things: `kargo create -f kargo/just-kargo-things.yaml`
+* Load [PAT creds for Kargo](https://kargo.akuity.io/how-to-guides/managing-credentials#credentials-as-kubernetes-secret-resources): `kargo create -f ~/workspace/kargo/kargo-saas-demo.yaml`
+
+You may need to "hard" refresh all the Apps on the Argo CD UI.
